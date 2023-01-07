@@ -39,7 +39,7 @@ mongoose.connect(MONGODB_URI).then(() =>{
 app.use(cors());
 
 const __dirname = path.resolve();
-app.use('/uploads', express.static(path.join(__dirname, './client/build')));
+app.use(express.static(path.join(__dirname, './client/build')));
 
 app.get('*', function (req, res){
     res.sendFile(path.join(__dirname, './client/build/index.html'));

@@ -28,7 +28,7 @@ app.use('/api/orders/', OrderRouter);
 
 
 //Connect with DB
-const MONGODB_URI = config.MONGODB_URL;
+const MONGODB_URI = process.env.MONGODB_URL;
 dotenv.config();
 mongoose.connect(MONGODB_URI).then(() =>{
     console.log("Connected to DB"); 
